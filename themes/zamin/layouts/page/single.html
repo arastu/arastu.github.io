@@ -1,0 +1,15 @@
+{{- define "main" -}}
+<section class="about">
+  {{ if .Params.portrait }}<div class="portrait"></div>{{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  {{ with .Params.facts }}
+  <dl class="about-facts">
+    {{ range . }}
+    <dt>{{ .label }}</dt>
+    <dd>{{ .value | safeHTML }}</dd>
+    {{ end }}
+  </dl>
+  {{ end }}
+</section>
+{{- end -}}

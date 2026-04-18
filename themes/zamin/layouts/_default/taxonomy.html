@@ -1,0 +1,11 @@
+{{- define "main" -}}
+<section class="archive">
+  <h1>tags</h1>
+  <p class="sub">every tag used across the blog.</p>
+  <div class="tags" style="margin-top: 24px;">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a class="tag" href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" style="text-decoration:none;">{{ $name }} <span class="count">{{ len $taxonomy.Pages }}</span></a>
+    {{ end }}
+  </div>
+</section>
+{{- end -}}

@@ -1,0 +1,47 @@
+baseURL = "https://arastu.github.io/"
+languageCode = "en-us"
+title = "Touhid Arastu"
+theme = "zamin"
+enableRobotsTXT = true
+enableEmoji = true
+disableKinds = ["section"]
+summaryLength = 40
+
+[params]
+  description = "Touhid Arastu writes about backend systems, engineering leadership, and the slow work of helping large systems hold."
+  author = "arastu"
+  since = "2022"
+
+  [params.intro]
+    heading = "where <em>systems take their shape</em>"
+    dek = "I'm Touhid Arastu, an engineering leader with backend roots. I write about distributed systems, platform work, and growing teams, the slower kind of engineering work, where old systems are asked to carry new weight and the real problem takes a while to show its face."
+
+[taxonomies]
+  tag = "tags"
+
+[[menu.main]]
+  name = "writing"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "archive"
+  url = "/archive/"
+  weight = 20
+
+[[menu.main]]
+  name = "tags"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "about"
+  url = "/about/"
+  weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+  style = "bw"

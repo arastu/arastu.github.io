@@ -1,0 +1,15 @@
+{{- define "main" -}}
+<section class="archive">
+  <h1>{{ .Title | lower }}</h1>
+  <p class="sub">posts tagged <strong>{{ .Title | lower }}</strong> — {{ len .Pages }} in total.</p>
+  <div class="archive-year">
+    {{ range .Pages.ByDate.Reverse }}
+      <a class="archive-row" href="{{ .RelPermalink }}">
+        <span class="date">{{ .Date.Format "2006·01·02" }}</span>
+        <span class="t">{{ .Title }}</span>
+        {{ with index .Params.tags 0 }}<span class="tag-mini">{{ . }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{- end -}}

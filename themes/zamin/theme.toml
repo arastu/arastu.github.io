@@ -1,0 +1,12 @@
+name = "zamin"
+license = "MIT"
+licenselink = "https://github.com/arastu/zamin/blob/main/LICENSE"
+description = "A warm, diary-voiced blog theme with a sage pastel palette and MellSans typography."
+homepage = "https://arastu.io/"
+tags = ["blog", "minimal", "pastel", "personal", "writing"]
+features = ["dark-mode", "tags", "archive", "reading-progress"]
+min_version = "0.100.0"
+
+[author]
+  name = "arastu"
+  homepage = "https://arastu.io/"

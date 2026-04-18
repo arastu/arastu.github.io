@@ -1,0 +1,40 @@
+{{- define "main" -}}
+<article class="post" id="postBody">
+  <header class="post-head">
+    <a href="{{ "/" | relURL }}" class="back">← back to notes</a>
+    <div class="kicker">
+      <span>{{ .Date.Format "jan 02, 2006" | lower }}</span>
+      <span>·</span>
+      <span>{{ .ReadingTime }} min read</span>
+      {{ with .Params.tags }}
+      <span>·</span>
+      <span>
+        {{- range $i, $t := . -}}
+          {{ if $i }} / {{ end }}<a href="{{ "/tags/" | relURL }}{{ $t | urlize }}/">{{ $t }}</a>
+        {{- end -}}
+      </span>
+      {{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.dek }}<p class="dek">{{ . }}</p>{{ end }}
+    {{ with .Params.cover }}
+    <div class="cover" aria-hidden="true">
+      <div class="stripes"></div>
+      <div class="label">cover image — {{ . }}</div>
+    </div>
+    {{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  <footer class="post-footer">
+    <span>written on {{ .Date.Format "January 2, 2006" | lower }}</span>
+    <div class="reactions">
+      <button class="react-btn" id="saveBtn" data-id="{{ .File.UniqueID }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>save for later</span>
+      </button>
+    </div>
+  </footer>
+</article>
+{{- end -}}

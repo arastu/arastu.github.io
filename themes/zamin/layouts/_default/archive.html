@@ -1,0 +1,21 @@
+{{- define "main" -}}
+<section class="archive">
+  <h1>archive</h1>
+  {{- $posts := where .Site.RegularPages "Section" "posts" -}}
+  {{- $years := 0 -}}
+  {{- range $y, $_ := $posts.GroupByDate "2006" -}}{{ $years = add $years 1 }}{{- end -}}
+  <p class="sub">everything, by year. ({{ len $posts }} posts, {{ $years }} years)</p>
+  {{ range $posts.GroupByDate "2006" }}
+  <div class="archive-year">
+    <h2><span>{{ .Key }}</span><span class="n">{{ len .Pages }} posts</span></h2>
+    {{ range .Pages }}
+      <a class="archive-row" href="{{ .RelPermalink }}">
+        <span class="date">{{ .Date.Format "01·02" }}</span>
+        <span class="t">{{ .Title }}</span>
+        {{ with index .Params.tags 0 }}<span class="tag-mini">{{ . }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{- end -}}
