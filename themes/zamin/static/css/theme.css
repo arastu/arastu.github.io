@@ -86,9 +86,9 @@
   .progress {
     position: fixed;
     top: 0; left: 0;
-    height: 2px;
+    height: 4px;
     width: 0;
-    background: var(--moss);
+    background: var(--accent);
     z-index: 80;
     transition: width 0.08s linear;
     opacity: 0;
