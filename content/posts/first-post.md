@@ -3,7 +3,7 @@ title: "a first post, after years of not posting"
 date: 2026-04-18
 dek: "Why I'm finally writing things down in a place that isn't a notebook or a Slack DM."
 tags: ["meta"]
-cover: "first light through curtains"
+coverImage: "/images/posts/first-post-cover.png"
 summary: "I've been meaning to start this for three years. I kept not doing it because I thought I needed a plan. I think I was wrong about that."
 ---
 

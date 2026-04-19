@@ -17,11 +17,17 @@
     </div>
     <h1>{{ .Title }}</h1>
     {{ with .Params.dek }}<p class="dek">{{ . }}</p>{{ end }}
+    {{ with .Params.coverImage }}
+    <figure class="cover cover-image">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager" />
+    </figure>
+    {{ else }}
     {{ with .Params.cover }}
     <div class="cover" aria-hidden="true">
       <div class="stripes"></div>
       <div class="label">cover image — {{ . }}</div>
     </div>
+    {{ end }}
     {{ end }}
   </header>
   <div class="prose">

@@ -14,7 +14,7 @@ A warm, diary-voiced Hugo theme with a sage pastel palette and **MellSans** typo
 - **Save for later** (localStorage-based likes)
 - Floating **Tweaks** panel — reader-adjustable font size
 - MellSans display font (Regular + Italic) bundled
-- JetBrains Mono for meta lines, code, and kickers
+- MellMono for meta lines, code, and kickers
 - Fully responsive, minimal JS, no build step
 
 ## Install
@@ -154,12 +154,12 @@ The sage pastel palette is defined as CSS variables in `static/css/theme.css`. O
 
 **MellSans** is bundled (Regular + Italic). Because it doesn't ship bold weights, the theme uses size, tracking, and color — not weight — to build hierarchy. If you have additional MellSans weights, drop the `.otf` files into `static/fonts/` and add matching `@font-face` rules in your own stylesheet.
 
-Mono font is **JetBrains Mono** via Google Fonts.
+Mono font is **MellMono** from the bundled font set.
 
 ## Credits
 
 - Font: MellSans (user-supplied, bundled with permission)
-- Mono: [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+- Mono: MellMono
 
 ## License
 
